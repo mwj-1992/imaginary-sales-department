@@ -17,10 +17,10 @@ provider:
   memorySize: 512
   environment:
     NODE_ENV: production
-    USERNAME: "admin"
-    PASSWORD: "5m3s9GYUIRTYNmJ2zM00"
-    DATABASE: "database-1"
-    HOST: "database-1.cpmhnocysqyy.ap-southeast-1.rds.amazonaws.com"
+    USERNAME: ""
+    PASSWORD: ""
+    DATABASE: ""
+    HOST: ""
     PORT: 3306
     DIALECT: "mysql"
 
