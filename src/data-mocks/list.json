@@ -1,0 +1,8 @@
+{
+    "queryStringParamteres": {
+        "sort": "asc",
+        "limit": 5,
+        "order": "created_at",
+        "offset": 0
+    }
+}

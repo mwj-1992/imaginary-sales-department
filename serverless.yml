@@ -1,0 +1,47 @@
+service: imaginary-sales-department
+
+package:
+  exclude:
+    - src/**
+    - node_modeules
+  include:
+    - src
+plugins:
+  - serverless-plugin-typescript
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: ap-southeast-1
+  timeout: 20
+  versionFunctions: false
+  memorySize: 512
+  environment:
+    NODE_ENV: production
+    USERNAME: "admin"
+    PASSWORD: "5m3s9GYUIRTYNmJ2zM00"
+    DATABASE: "database-1"
+    HOST: "database-1.cpmhnocysqyy.ap-southeast-1.rds.amazonaws.com"
+    PORT: 3306
+    DIALECT: "mysql"
+
+functions:
+  leads-create:
+    handler: src/lambda/leads/create.create
+    events:
+      - http:
+          path: v1/leads
+          method: post
+
+  leads-list:
+    handler: src/lambda/leads/list.list
+    events:
+      - http:
+          path: v1/leads
+          method: get
+          request:
+            parameters:
+              querystrings:
+                limit: false
+                offset: false
+                order: false
+                sort: false
